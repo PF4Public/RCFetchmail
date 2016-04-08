@@ -1,36 +1,32 @@
 {
-    "name": "PF4Public/fetchmail",
-    "type": "roundcube-plugin",
-    "description": "Roundcube fetchmail plugin is a Roundcube plugin, which allows users to download their mail from external mailboxes.",
-	"keywords": ["fetchmail"],
+	"name": "PF4Public/fetchmail",
+	"type": "roundcube-plugin",
+	"description": "Roundcube fetchmail plugin is a Roundcube plugin, which allows users to download their mail from external mailboxes.",
+	"keywords": ["fetchmail",
+	"download"],
 	"homepage": "http://pf4public.github.io/fetchmail/",
-    "license": "GPL-3.0+",
-    "authors": [
-	        {
-	            "name": "Arthur Mayer",
-	            "role": "Retired developer"
-	        },
-	        {
-	            "name": "puzich",
-	            "role": "Retired developer"
-	        },
-	        {
-	            "name": "PF4Public",
-	            "role": "Developer"
-	        }
-	    ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://plugins.roundcube.net"
-        }
-    ],
-    "require": {
-        "roundcube/plugin-installer": ">=0.1.3"
-    },
-	"support":
+	"license": "GPL-3.0+",
+	"authors": [{
+		"name": "Arthur Mayer",
+		"role": "Retired developer"
+	},
 	{
-	     "issues": "https://github.com/PF4Public/fetchmail/issues",
-	     "source": "https://github.com/PF4Public/fetchmail"
+		"name": "puzich",
+		"role": "Retired developer"
+	},
+	{
+		"name": "PF4Public",
+		"role": "Developer"
+	}],
+	"repositories": [{
+		"type": "composer",
+		"url": "https://plugins.roundcube.net"
+	}],
+	"require": {
+		"roundcube/plugin-installer": ">=0.1.3"
+	},
+	"support": {
+		"issues": "https://github.com/PF4Public/fetchmail/issues",
+		"source": "https://github.com/PF4Public/fetchmail"
 	}
 }
