@@ -26,7 +26,7 @@
 		"roundcube/plugin-installer": ">=0.1.6"
 	},
 	"support": {
-		"issues": "https://github.com/PF4Public/fetchmail/issues",
-		"source": "https://github.com/PF4Public/fetchmail"
+		"issues": "https://github.com/pf4public/fetchmail/issues",
+		"source": "https://github.com/pf4public/fetchmail"
 	}
 }
