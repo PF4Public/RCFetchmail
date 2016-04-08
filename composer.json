@@ -1,5 +1,5 @@
 {
-	"name": "PF4Public/fetchmail",
+	"name": "pf4public/fetchmail",
 	"type": "roundcube-plugin",
 	"description": "Roundcube fetchmail plugin is a Roundcube plugin, which allows users to download their mail from external mailboxes.",
 	"keywords": ["fetchmail",
