@@ -90,8 +90,7 @@
 <span class="pl-c"># database password</span>
 <span class="pl-k">our</span> <span class="pl-smi">$db_password</span>=<span class="pl-s"><span class="pl-pds">"</span>CHANGE_ME!<span class="pl-pds">"</span></span>;</pre></div>
 </li>
-<li>Next step is to configure <strong>cron</strong> for regular mail checking with <code>sudo crontab -u mail -e</code>. For example for 5 minute intervals add this: <code>*/5 * * * * /var/mail/fetchmail.pl &gt;/dev/null</code>
-</li>
+<li>Next step is to configure <strong>cron</strong> for regular mail checking with <code>sudo crontab -u mail -e</code>. For example for 5 minute intervals add this: <code>*/5 * * * * /var/mail/fetchmail.pl &gt;/dev/null</code>. Worth noting that even if you configure cron for a 5 minutes interval, fetchmail will still abide user configured checking interval. As a result setting bigger intervals here manifests them as intervals available to fetchmail, that is setting 45 here overrides any user setting wich is less</li>
 <li>You might also need to install <code>liblockfile-simple-perl</code> and <code>libsys-syslog-perl</code> or <code>libunix-syslog-perl</code> on <strong>Debian</strong>-based systems.</li>
 <li>Lastly there might be need to do <code>sudo mkdir /var/run/fetchmail; sudo chown mail:mail /var/run/fetchmail</code>
 </li>
