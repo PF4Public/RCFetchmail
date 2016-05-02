@@ -55,7 +55,14 @@
 <ol>
 <li>First you need to install <strong>fetchmail</strong> itself. For <strong>Debian</strong> you can do so by <code>sudo apt-get install fetchmail</code>
 </li>
-<li>Next you should extract <strong>Roundcube fetchmail plugin</strong> archive into your <strong>Roundcube</strong> <code>plugins</code> folder creating "fetchmail" folder there.</li>
+<li>Next you should extract <strong>Roundcube fetchmail plugin</strong> archive into your <strong>Roundcube</strong> <code>plugins</code> folder creating "fetchmail" folder there.
+
+<ul>
+<li>You can do so either by using <code>composer</code> for which there is <code>composer.json</code>, still you need to follow further installation steps since those could not be accomplished with <code>composer</code>
+</li>
+<li>Alternatively you can download needed release from <a href="https://github.com/PF4Public/fetchmail/releases">Releases page</a> unpacking it accordingly</li>
+</ul>
+</li>
 <li>
 <p>After that you need to enable newly installed plugin by adding it to <strong>Roundcube</strong> plugin list. For <strong>Debian</strong> related config file is <code>/etc/roundcube/main.inc.php</code> and relevant setting is </p>
 
@@ -70,6 +77,13 @@
 
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-smi">$rcmail_config</span> [<span class="pl-s"><span class="pl-pds">'</span>fetchmail_limit<span class="pl-pds">'</span></span>] <span class="pl-k">=</span> <span class="pl-c1">10</span>;</span>
+<span class="pl-s1"></span></pre></div>
+</li>
+<li>
+<p>You may want to allow users to specify IMAP folder they wish to download mail from in <code>fetchmail/config/config.inc.php</code>. Default setting is </p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$rcmail_config</span> [<span class="pl-s"><span class="pl-pds">'</span>fetchmail_folder<span class="pl-pds">'</span></span>] <span class="pl-k">=</span> <span class="pl-c1">false</span>;</span>
 <span class="pl-s1"></span></pre></div>
 </li>
 <li>You need to create additional table in your database using one of the supplied <code>.sql</code> files. Another possibility is to use <strong>Postfix Admin</strong> table if you have it installed. If using <strong>PostgreSQL</strong> you may use schemas to share <code>fetchmail</code> table between <strong>Roundcube</strong> and <strong>Postfix Admin</strong>. Namely creating it in <code>public</code> schema, whereas every other table in it's appropriate schema, like <code>roundcube</code> and <code>postfixadmin</code>. Please refer to <a href="http://www.postgresql.org/docs/current/static/ddl-schemas.html">the documentation</a> for more information.</li>
