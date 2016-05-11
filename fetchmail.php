@@ -240,7 +240,7 @@ class fetchmail extends rcube_plugin {
 				'maxlength' => 320,
 				'size' => 40
 		) );
-		$out .= sprintf ( "<tr id=\"fetchmail_folder_display\"".(($protocol!="imap")?("style=\"display: none;\""):(""))."><td class=\"title\"><label for=\"%s\">%s</label>:</td><td>%s</td></tr>\n", $field_id, rep_specialchars_output ( $this->gettext ( 'fetchmailfolder' ) ), $input_fetchmailfolder->show ( $folder ) );
+		$out .= sprintf ( "<tr id=\"fetchmail_folder_display\"><td class=\"title\"><label for=\"%s\">%s</label>:</td><td>%s</td></tr>\n", $field_id, rep_specialchars_output ( $this->gettext ( 'fetchmailfolder' ) ), $input_fetchmailfolder->show ( $folder ) );
 		}
 		
 		$field_id = 'fetchmailpollinterval';
