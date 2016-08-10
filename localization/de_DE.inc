@@ -13,7 +13,7 @@ $labels['fetchmailserver'] = 'Server-Hostname';
 $labels['fetchmailusessl'] = 'Bei Abruf SSL verwenden';
 $labels['fetchmail_entries'] = 'Vorhandene Einträge';
 //$labels['fetchmail_to'] = 'Collect mail to';
-$labels['nofetch'] = 'Keine Einträge vorhanden';
+$labels['nofetch'] = 'keine Einträge vorhanden';
 
 $messages = array();
 $messages['fetchmailabort'] = 'Abbrechen';
