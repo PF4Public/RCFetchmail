@@ -86,6 +86,9 @@
 	function save() {
 		$id = rcube_utils::get_input_value ( '_id', rcube_utils::INPUT_POST );
 		$mailbox = $this->rc->user->data ['username'];
+		$explode_mailbox = explode('@', $mailbox);
+		$mailbox_user = $explode_mailbox[0];
+		$mailbox_domain = $explode_mailbox[1];
 		$protocol = rcube_utils::get_input_value ( '_fetchmailprotocol', rcube_utils::INPUT_POST );
 		$protocol = strtoupper ( $protocol ); // TODO: temporary
 		$server = rcube_utils::get_input_value ( '_fetchmailserver', rcube_utils::INPUT_POST );
@@ -125,14 +128,14 @@
 			$limit = $this->rc->config->get ( 'fetchmail_limit' );
 			$num_rows = $this->rc->db->num_rows ( $result );
 			if ($num_rows < $limit) {
-				$sql = "INSERT INTO fetchmail (mailbox, active, src_server, src_user, src_password, src_folder, poll_time, fetchall, keep, protocol, usessl, src_auth, mda) VALUES ('$mailbox', '$enabled', '$server', '$user', '$pass', '$folder', '$pollinterval', '$fetchall', '$keep', '$protocol', '$usessl', 'password', '$mda' )";
+				$sql = "INSERT INTO fetchmail (mailbox, domain, active, src_server, src_user, src_password, src_folder, poll_time, fetchall, keep, protocol, usessl, src_auth, mda) VALUES ('$mailbox', '$mailbox_domain', '$enabled', '$server', '$user', '$pass', '$folder', '$pollinterval', '$fetchall', '$keep', '$protocol', '$usessl', 'password', '$mda' )";
 				$insert = $this->rc->db->query ( $sql );
 				$this->rc->output->command ( 'display_message', $this->gettext ( 'successfullysaved' ), 'confirmation' );
 			} else {
 				$this->rc->output->command ( 'display_message', 'Error: ' . $this->gettext ( 'fetchmaillimitreached' ), 'error' );
 			}
 		} else {
-			$sql = "UPDATE fetchmail SET mailbox = '$mailbox', active = '$enabled', keep = '$keep', protocol = '$protocol', src_server = '$server', src_user = '$user', src_password = '$pass', src_folder = '$folder', poll_time = '$pollinterval', fetchall = '$fetchall', usessl = '$usessl', src_auth = 'password', mda = '$mda' WHERE id = '$id'";
+			$sql = "UPDATE fetchmail SET mailbox = '$mailbox', domain = '$mailbox_domain', active = '$enabled', keep = '$keep', protocol = '$protocol', src_server = '$server', src_user = '$user', src_password = '$pass', src_folder = '$folder', poll_time = '$pollinterval', fetchall = '$fetchall', usessl = '$usessl', src_auth = 'password', mda = '$mda' WHERE id = '$id'";
 			$update = $this->rc->db->query ( $sql );
 			$this->rc->output->command ( 'display_message', $this->gettext ( 'successfullysaved' ), 'confirmation' );
 		}
