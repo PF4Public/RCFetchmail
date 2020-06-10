@@ -21,6 +21,7 @@
          $this->load_config('config.inc.php.dist');
          $this->load_config();
          $this->add_texts('localization/', true);
+         $this->include_stylesheet($this->local_skin_path() .'/fetchmail.css');
          $this->show_folder = $this->rc->config->get('fetchmail_folder');
         
          $this->add_hook('settings_actions', array(
