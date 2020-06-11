@@ -1,0 +1,12 @@
+.listing.iconized li.account_information > a:before {
+	content: "\f05a";
+}
+
+.action-plugin-fetchmail table td {
+	border: none;
+	padding: 4px 0;
+}
+
+.action-plugin-fetchmail input[type="button"] {
+	margin-bottom: 15px;
+}
