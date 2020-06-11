@@ -1,6 +1,10 @@
 .action-plugin-fetchmail table td {
 	border: none;
-	padding: 4px;
+	padding: 4px 0;
+}
+
+.action-plugin-fetchmail input[type="button"] {
+	margin-bottom: 15px;
 }
 
 .action-plugin-fetchmail input[type="button"] {
